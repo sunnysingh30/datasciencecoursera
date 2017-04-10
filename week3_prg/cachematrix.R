@@ -40,3 +40,14 @@ cacheSolve <- function(mat_fun, ...) {
     mat_fun$setInv(inv)
     return(inv)
 }
+
+
+# Executing above functions
+set.seed(21)
+mtx_data <- matrix(round(abs(rnorm(11:22)),2), nrow = 2, ncol = 2)
+mat_a <- makeCacheMatrix(mtx_data)
+mat_b <- makeCacheMatrix(mtx_data)
+
+# Run below cacheSolve twice to see the result returned from cached memory
+cacheSolve(mat_a)
+cacheSolve(mat_b)
